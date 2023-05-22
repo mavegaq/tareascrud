@@ -38,7 +38,6 @@ exports.createTodo = (req, res, next) => {
       next({ status: 500, message: 'Error al crear la tarea', error });
     });
 };
-
 // Actualizar una tarea
 exports.updateTodo = (req, res, next) => {
   const { id } = req.params;
@@ -58,9 +57,11 @@ exports.updateTodo = (req, res, next) => {
       res.json(updatedTodo);
     })
     .catch(error => {
+      console.log(error); 
       next({ status: 500, message: 'Error al actualizar la tarea', error });
     });
 };
+
 
 // Eliminar una tarea
 exports.deleteTodo = (req, res, next) => {
