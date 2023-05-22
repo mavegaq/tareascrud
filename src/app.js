@@ -9,6 +9,13 @@ app.use(express.json());
 // Rutas
 app.use('/api/v1/todos', todosRouter);
 
+// Ruta raíz
+app.get('/', (req, res) => {
+  res.send('Servidor funcionando');
+});
+
+
+
 // Puerto de escucha
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
